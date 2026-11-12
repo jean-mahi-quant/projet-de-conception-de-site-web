@@ -43,8 +43,6 @@ jupyter notebook notebooks/     # version commentée pas à pas
 
 ## Résultats
 
-## Résultats
-
 Période : janvier 2020 à novembre 2026, 7 actifs (AAPL, MSFT, JPM, XOM, SPY, TLT, GLD), portefeuille équipondéré.
 
 | Indicateur | Valeur |
