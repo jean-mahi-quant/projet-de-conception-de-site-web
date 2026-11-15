@@ -30,7 +30,7 @@ $defis = $pdo->query(
         <?php endif; ?>
       </div>
       <div class="col-12 col-md-5 text-center">
-        <img src="img/arene.png" class="img-fluid rounded" alt="Illustration de l'arène">
+        <img src="arene.jpg" class="img-fluid rounded" alt="Illustration de l'arène">
       </div>
     </div>
   </div>
