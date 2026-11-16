@@ -1,5 +1,5 @@
 <?php
-// Connexion PDO (à adapter avec les identifiants du serveur de l'école)
+// Connexion PDO 
 $pdo = new PDO(
     'mysql:host=localhost;dbname=labrute;charset=utf8mb4',
     'root',
