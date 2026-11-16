@@ -60,3 +60,19 @@ function badge_etat($etat) {
     [$classe, $libelle] = $map[$etat] ?? ['light', $etat];
     return '<span class="badge text-bg-' . $classe . '">' . e($libelle) . '</span>';
 }
+
+// Vérifie à chaque page que le compte existe et est actif, et relit son rôle en base :
+// un compte désactivé est déconnecté immédiatement, une session périmée est fermée.
+if (connecte()) {
+    $verif = $pdo->prepare('SELECT actif, role FROM joueur WHERE id = ?');
+    $verif->execute([$_SESSION['joueur_id']]);
+    $compte = $verif->fetch();
+    if (!$compte || !$compte['actif']) {
+        $_SESSION = [];
+        session_destroy();
+        session_start();
+        flash('Ton compte est désactivé ou n\'existe plus.', 'warning');
+    } else {
+        $_SESSION['role'] = $compte['role'];
+    }
+}
